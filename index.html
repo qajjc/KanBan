@@ -13,55 +13,25 @@
 		<link rel="stylesheet" type="text/css" href="css/multilevelmenu.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<link rel="stylesheet" type="text/css" href="css/animations.css" />
+        <script src="config.js"></script>
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body>	
 		
 		<div class="pt-triggers">
-			<button id="iterateEffects" class="pt-touch-button">下一张</button>
+			<button id="prev" style="width:110px;cursor:pointer;"> 上一张 </button><br/>
+			<button id="next" style="width:110px;cursor:pointer;"> 下一张 </button><br/>
+			<button id="stopOrStart" style="width:110px;cursor:pointer;"> 暂停 </button><br/>
+			<button id="refreshOnce" style="width:110px;cursor:pointer;"> 立即刷新 </button>
+			
 		</div>
-
+		
 		<!-- 设置访问页面 -->
 		<div id="pt-main" class="pt-perspective">
-			<div class="pt-page pt-page-1"><iframe width="1280" height="1280" 
-																						 src="http://weibo.com/"
-																						 style="background:white;">
-																		</iframe>
-			</div>
-			<div class="pt-page pt-page-2"><iframe width="1280" height="1280" 
-																						 src="http://www.163.com/" 
-																						 style="background:white;">
-																		</iframe>
-			</div>
-			<div class="pt-page pt-page-3"><iframe width="1280" height="1280" 
-																						 src="http://benweet.github.io/stackedit/"
-																						 style="background:white;">
-																		</iframe>
-			</div>
 		</div>
-
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="js/jquery.dlmenu.js"></script>
 		<script src="js/pagetransitions.js"></script>
-
-		<script type="text/javascript">
-			// 实现页面切换
-			function next_frame()
-			{
-				$(iterateEffects).click();
-			}
-			setInterval("next_frame()", 15*1000);
-
-			// 实现iframe刷新
-			function iframe_reload()
-			{
-				iframes = document.getElementsByTagName('iframe');
-				for (var i = iframes.length - 1; i >= 0; i--) {
-					iframes[i].src = iframes[i].src
-				};
-			}
-			setInterval("iframe_reload()", 60*1000);
-		</script>
 
 	</body>
 </html>
